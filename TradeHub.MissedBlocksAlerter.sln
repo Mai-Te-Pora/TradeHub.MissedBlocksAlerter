@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeHub.MissedBlocksAlerter", "TradeHub.MissedBlocksAlerter.csproj", "{0D689C9E-AEF4-491B-B045-263C10C335BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D689C9E-AEF4-491B-B045-263C10C335BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D689C9E-AEF4-491B-B045-263C10C335BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D689C9E-AEF4-491B-B045-263C10C335BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D689C9E-AEF4-491B-B045-263C10C335BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EB9B24E-87B3-4628-AF43-9B48440E08F3}
+	EndGlobalSection
+EndGlobal

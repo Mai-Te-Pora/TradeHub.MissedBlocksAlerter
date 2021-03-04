@@ -11,13 +11,13 @@ It notify you on any device (phone, tablet or desktop) through Pushbullet if you
 ## Installation
 ### Linux
 ```bash
-curl -L https://github.com/Zaliro/TradeHub.MissedBlocksAlerter/releases/download/v1.0.0/install-linux-x64.tar.gz | tar -xz
+curl -L https://github.com/Mai-Te-Pora/TradeHub.MissedBlocksAlerter/releases/download/v1.0.0/install-linux-x64.tar.gz | tar -xz
 ```
 
 ### Windows
 Download and extract the latest release corresponding to your operating system (x64) or (x86).
 
-[Latest releases](https://github.com/Zaliro/TradeHub.MissedBlocksAlerter/releases)
+[Latest releases](https://github.com/Mai-Te-Pora/TradeHub.MissedBlocksAlerter/releases)
 
 ## Configuration
 Update the `appsettings.json` file with your information.

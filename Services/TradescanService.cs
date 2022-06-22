@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RestSharp;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TradeHub.MissedBlocksAlerter.Models.Tradescan.Responses;
 using TradeHub.MissedBlocksAlerter.Settings;
@@ -27,7 +25,10 @@ namespace TradeHub.MissedBlocksAlerter.Services
 
         public async Task<KeyValuePair<long?, long?>> GetBlockHeightAndMissedBlocksByConsensusAddr(string consensusAddr)
         {
-            var signingInfosReq = new RestRequest(_appSettings.Value.Supervision.SigningInfosEndpoint, Method.GET, DataFormat.Json);
+            var signingInfosReq = new RestRequest(_appSettings.Value.Supervision.SigningInfosEndpoint)
+            {
+                RequestFormat = DataFormat.Json
+            };
             var signingInfos = await _restClient.ExecuteAsync<SigningInfosResponse>(signingInfosReq);
 
             var blockHeight = signingInfos.Data?.Height;

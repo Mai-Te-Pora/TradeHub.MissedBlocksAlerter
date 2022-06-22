@@ -4,11 +4,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using TradeHub.MissedBlocksAlerter.Models.Pushbullet.Responses;
 using TradeHub.MissedBlocksAlerter.Settings;
@@ -38,7 +35,10 @@ namespace TradeHub.MissedBlocksAlerter.Services
 
         public async Task<string> GetDeviceIdenByDeviceName(string deviceName)
         {
-            var devicesListReq = new RestRequest(Constants.PUSHBULLET_ENDPOINT_DEVICES, Method.GET, DataFormat.Json);
+            var devicesListReq = new RestRequest(Constants.PUSHBULLET_ENDPOINT_DEVICES)
+            {
+                RequestFormat = DataFormat.Json
+            };
             var devicesList = await _restClient.ExecuteAsync<DevicesListResponse>(devicesListReq);
 
             return devicesList.Data?.Devices?.FirstOrDefault(x => x.Nickname == deviceName)?.Iden; ;
@@ -46,7 +46,10 @@ namespace TradeHub.MissedBlocksAlerter.Services
 
         public async Task<bool> CreatePush(string deviceIden, string message)
         {
-            var createPushReq = new RestRequest(Constants.PUSHBULLET_ENDPOINT_PUSH, Method.POST, DataFormat.Json);
+            var createPushReq = new RestRequest(Constants.PUSHBULLET_ENDPOINT_PUSH, Method.Post)
+            {
+                RequestFormat = DataFormat.Json
+            };
             createPushReq.AddJsonBody(new
             {
                 DeviceIden = deviceIden,
